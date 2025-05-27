@@ -1,4 +1,4 @@
-package ch03.sec01;
+package ch03.sec02;
 
 public class ArithmeticOperatorExample {
     public static void main(String[] args) {
