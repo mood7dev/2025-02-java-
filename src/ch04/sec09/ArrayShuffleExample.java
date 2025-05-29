@@ -9,7 +9,7 @@ public class ArrayShuffleExample {
         for(int i = 0; i < arr.length; i++) { // 0부터 9까지 숫자를 차례대로 넣기
             arr[i] = i; // arr[0] = 0, arr[1] = 1, ..., arr[9] = 9
         }
-
+        System.out.println(Arrays.toString(arr));
         /*배열에 있는 숫자 섞기*/
         for (int i = arr.length - 1; i>0; i-- ) {
             /* 0부터 i까지 중에 아무 숫자 하나를 랜덤으로 고르기 */
@@ -19,6 +19,7 @@ public class ArrayShuffleExample {
             arr[i] = arr[j];
             arr[j] = temp;
         }
+        System.out.println("<!-- 랜덤값 -->");
         System.out.println(Arrays.toString(arr));
     }
 }
