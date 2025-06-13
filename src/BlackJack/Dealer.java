@@ -1,29 +1,51 @@
 package BlackJack;
-/*
-public class Dealer {
-    public class Dealer implements Player {
-        private List<Card> cards = new ArrayList<>();
-        private int score = 0;
 
-        public List<Card> getHaveCards() {
-            return cards;
-        }
+import java.util.ArrayList;
+import java.util.List;
 
-        @Override
-        public void draw(CardDeck cardDeck) {
-            cards.add(cardDeck.getCard());
-        }
+public class Dealer implements Player {
+    private final String name = "딜러";
+    private final List<Card> haveCards;
+
+    public Dealer() {
+        this.haveCards = new ArrayList<>();
     }
-*/
-    /*
 
+    @Override
+    public String getName() {
+        return name;
+    }
 
+    @Override
+    public List<Card> getHaveCards() {
+        return haveCards;
+    }
 
-● 역할:
+    // 카드 한 장 뽑기
+    public void draw(CardDeck cardDeck) {
+        Card card = cardDeck.getCard();
+        haveCards.add(card);
+    }
 
-- 게임 진행의 기준점 역할
-- 자신이 받은 카드들을 저장하고 최종적으로 공개합니다.
+    @Override
+    public int getScore() {
+        int total = 0;
+        int aceCount = 0;
 
-● 카드 오픈: 딜러는 자신의 카드를 공개해 점수 비교에 사용됩니다.
-     */
+        for (Card card : haveCards) {
+            int[] values = card.getDenomination().getValues();
+            total += values[values.length - 1]; // ACE: 11, others: 정수값
+            if (values.length == 2) {
+                aceCount++; // ACE 카드 개수 세기
+            }
+        }
 
+        // 총점이 21을 초과하고 ACE가 있을 경우, ACE를 1로 취급하여 점수 조정
+        while (total > 21 && aceCount > 0) {
+            total -= 10; // 11 → 1 로 전환
+            aceCount--;
+        }
+
+        return total;
+    }
+}

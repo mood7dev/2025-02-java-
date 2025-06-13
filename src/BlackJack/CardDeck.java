@@ -43,4 +43,11 @@ public class CardDeck {
     public int getRemainingCardCount() {
         return cardDeck.size();
     }
+
+    // 새로 추가하는 메서드
+    public void printAllCards() {
+        for (Card card : cardDeck) {
+            System.out.println(card);
+        }
+    }
 }
