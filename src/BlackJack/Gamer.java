@@ -45,4 +45,7 @@ public class Gamer implements Player {
 
         return total;
     }
+    public void reset() {
+        cards.clear();
+    }
 }

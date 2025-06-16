@@ -48,4 +48,9 @@ public class Dealer implements Player {
 
         return total;
     }
+    // 가진 카드 리스트 초기화
+    public void reset() {
+        haveCards.clear();
+        // 점수 초기화 등 필요하면 여기에 추가
+    }
 }

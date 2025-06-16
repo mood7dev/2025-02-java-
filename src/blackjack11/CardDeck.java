@@ -4,6 +4,7 @@ public class CardDeck {
     private Card[] cards = new Card[52];
     private String[] patterns = {"SPADE♠", "HEART♥", "DIAMOND♦", "CLUB♣"};
     private int selectedIdx = 0;
+    private Card card;
 
     public CardDeck() {
         init();
