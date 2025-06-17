@@ -12,8 +12,12 @@ public class ArrayListStudy {
         //list.add(card); 안 담긴다.
         System.out.println("List.size(): " + list.size());
         list.add("가");
-
         list.add("나");
+        list.add(1, "다");
         System.out.println("List.size(): " + list.size());
+        System.out.println("List.get(0): " + list.get(0));
+        System.out.println("List.get(1): " + list.get(1));
+        list.remove(1);
+        System.out.println("list.get(1): " + list.get(1));
     }
 }
